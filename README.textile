@@ -16,7 +16,6 @@ h3. Coming up (hopefully)
   * Nicer presentation
   * Ability to run as rack middleware with simple http auth
   * Ability to verify new senders from SESChange
-  * A Partybus with a lady's name
 
 h2. How To Get _your_ SESChange
 
