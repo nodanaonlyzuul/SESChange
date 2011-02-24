@@ -22,6 +22,7 @@ h2. How To Get _your_ SESChange
 
   # clone, or otherwise download a copy of SESChange
   # plug your AWS credentials into settings/s3_credentials.yml.example and copy it to settings/s3_credentials.yml
+  # Go into your project root and @$ ruby ses_change.rb@
 
 h2. Gem Dependencies
 
