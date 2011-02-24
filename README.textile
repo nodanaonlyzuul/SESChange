@@ -8,7 +8,7 @@ h3. If you want to know where you stand, without resorting to the command line -
 h3. Features
 
   * Heads up of your current sending limit and sending rate.
-  * Graphs of Delivery Attempts, Bounces, Rejects and Complaints
+  * Heads up and graphs of Delivery Attempts, Bounces, Rejects and Complaints
   * List of "Verified" email addresses
 
 h3. Coming up (hopefully)
