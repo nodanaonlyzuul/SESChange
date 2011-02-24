@@ -1,21 +1,20 @@
-h1. SESChange
+h1. SESChange is a Sinatra app to monitor your SES account activity.
 
-  "Amazon Simple Email Service (SES)":http://aws.amazon.com/ses/ is a great way for your application to send transactional email cheaply.
+  "Amazon Simple Email Service (SES)":http://aws.amazon.com/ses/ is a way for your application to send transactional email cheaply.
+  Amazon puts funky restrictions on your initial send rate and transaction limits.
 
-  Amazon puts some funky restrictions on your send limit and initial transaction rate.
-  *SESChange is a "sinatra":http://www.sinatrarb.com/ app to monitor your SES account activity.*
+  If you want to know where you stand, without resorting to the command line - *best get yourself a'SESChange.*
 
 h3. Features
 
-  * I'll
-  * Write
-  * These
-  * Soon
+  * Heads up of your current sending limit and sending rate.
+  * Graphs of Delivery Attempts, Bounces, Rejects and Complaints
+  * List of "Verified" email addresses
 
 h3. Coming up (hopefully)
 
+  * Nicer presentation
   * Ability to run as rack middleware with simple http auth
-  * Data Visualizations
   * Ability to verify new senders from SESChange
   * A Partybus with a lady's name
 
@@ -26,7 +25,7 @@ h2. How To Get _your_ SESChange
 
 h2. Gem Dependencies
 
-* rubygems
-* sinatra
-* aws/ses
-* erb
+  * rubygems
+  * sinatra
+  * aws/ses
+  * erb

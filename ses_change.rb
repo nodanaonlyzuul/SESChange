@@ -24,3 +24,15 @@ end
 get '/delivery_attempts' do
   erb :delivery_attempts
 end
+
+get '/bounces' do
+  erb :bounces
+end
+
+get '/rejects' do
+  erb :rejects
+end
+
+get '/complaints' do
+  erb :complaints
+end

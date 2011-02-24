@@ -3,11 +3,11 @@
 <h3>Send Rate: <%= @ses.quota.max_send_rate %> per second</h3>
 
 <!-- Authorized Sender -->
-<% authorized_senders = @ses.addresses.list.result %>
-<% if authorized_senders.length > 0 %>
-  <h3>Authorized Senders (<%= authorized_senders.length %>)</h3>
+<% verified_senders = @ses.addresses.list.result %>
+<% if verified_senders.length > 0 %>
+  <h3>Verified Senders (<%= verified_senders.length %>)</h3>
   <ul>
-    <% authorized_senders.sort.each do |authorized_sender| %>
+    <% verified_senders.sort.each do |authorized_sender| %>
      <li><%= authorized_sender %></li>
     <% end %>
   </ul>
@@ -18,31 +18,29 @@
 
 <h3>2 Week Overview</h3>
 <% data_points = @ses.statistics.result %>
+
 Delivery Attempts:
   <a href="/delivery_attempts">
     <%= data_points.map{|x|x["DeliveryAttempts"]}.map(&:to_i).inject{|sum, x| sum+x} %>
   </a>
   <br/>
-  <!-- TODO: Link to DeliveryAttempts over time -->
+
 Bounces:
-  <a href="#">
+  <a href="/bounces">
     <%= data_points.map{|x|x["Bounces"]}.map(&:to_i).inject{|sum, x| sum+x} %>
   </a>
   <br/>
-  <!-- TODO: Link to Bounces over time -->
 
 Rejects:
-  <a href="#">
+  <a href="/rejects">
     <%= data_points.map{|x|x["Rejects"]}.map(&:to_i).inject{|sum, x| sum+x} %>
   </a>
   <br/>
-  <!-- TODO: Link to Rejects over time -->
 
 Complaints:
-  <a href="#">
-  <%= data_points.map{|x|x["Complaints"]}.map(&:to_i).inject{|sum, x| sum+x} %>
-  <!-- TODO: Link to Complaints over time -->
- </a>
+  <a href="/complaints">
+    <%= data_points.map{|x|x["Complaints"]}.map(&:to_i).inject{|sum, x| sum+x} %>
+  </a>
  <br/>
 
 <!-- TODO See All Activity Over Time -->
