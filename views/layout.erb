@@ -1,0 +1,27 @@
+<HTML>
+  <head>
+    <title>SES Usage For <%= @app_name %></title>
+    <style TYPE="text/css">
+
+      body{
+        font: 13.34px helvetica,arial,freesans,clean,sans-serif;
+      }
+
+      #header{
+        height: 91px;
+        margin: 0 0 15px;
+        min-width: 950px;
+        width: 100%;
+        margin-bottom: 0;
+        background-color: #eee;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="header">
+      <h2>Amazon SES info for '<%= @app_name %>'</h2>
+    </div>
+    <%= yield %>
+  </body>
+</HTML>

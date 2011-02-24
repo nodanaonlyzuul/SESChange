@@ -1,0 +1,32 @@
+h1. SESChange
+
+  "Amazon Simple Email Service (SES)":http://aws.amazon.com/ses/ is a great way for your application to send transactional email cheaply.
+
+  Amazon puts some funky restrictions on your send limit and initial transaction rate.
+  *SESChange is a "sinatra":http://www.sinatrarb.com/ app to monitor your SES account activity.*
+
+h3. Features
+
+  * I'll
+  * Write
+  * These
+  * Soon
+
+h3. Coming up (hopefully)
+
+  * Ability to run as rack middleware with simple http auth
+  * Data Visualizations
+  * Ability to verify new senders from SESChange
+  * A Partybus with a lady's name
+
+h2. How To Get _your_ SESChange
+
+  # clone, or otherwise download a copy of SESChange
+  # plug your AWS credentials into settings/s3_credentials.yml.example and copy it to settings/s3_credentials.yml
+
+h2. Gem Dependencies
+
+* rubygems
+* sinatra
+* aws/ses
+* erb

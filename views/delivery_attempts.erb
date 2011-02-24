@@ -1,0 +1,12 @@
+<h3>Delivery Attempts</h3>
+<%
+   data_points       = @ses.statistics.result.sort_by{|x| x["Timestamp"]}
+   dates             = data_points.map{|x|x["Timestamp"]}
+   delivery_attempts = data_points.map{|x|x["DeliveryAttempts"]}
+
+%>
+A Googlechart here would be great!
+<br/>
+<br/>
+<br/>
+<img src="http://chart.apis.google.com/chart?chxl=0:|Mar|Jun|Jul|1:|low|medium|high&chxr=1,1.667,100&chxt=x,y&chs=300x150&cht=lc&chd=s:AA,Pf9&chg=25,50&chls=0.75,-1,-1|2,4,1&chm=o,FF9900,1,-2,8|b,3399CC44,0,1,0&chtt=Delivery+Attempts" width="300" height="150" alt="Delivery Attempts" />
