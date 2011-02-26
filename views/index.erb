@@ -1,8 +1,9 @@
-
 <h3>You've sent <%= @ses.quota.sent_last_24_hours %> of your <%= @ses.quota.max_24_hour_send %> in the last 24 hours.</h3>
 <h3>Send Rate: <%= @ses.quota.max_send_rate %> per second</h3>
 
-<!-- Authorized Sender -->
+<!-- Verified Sender -->
+<%=  @verification_message if defined?(@verification_message) %>
+
 <% verified_senders = @ses.addresses.list.result %>
 <% if verified_senders.length > 0 %>
   <h3>Verified Senders (<%= verified_senders.length %>)</h3>
@@ -14,7 +15,14 @@
 <% else %>
   <h3>You have no authorized senders</h3>
 <% end %>
-<!-- TODO: give users ability to add new authorized senders -->
+
+<form action="/verified_email_addresses" method="post" accept-charset="utf-8">
+  <p>
+    <label for="email_address">Add Verified Email</label>
+    <input id="email_address" name ="email_address" type="text"/>
+    <input type="submit" value="Go"/>
+  </p>
+</form>
 
 <h3>2 Week Overview</h3>
 <% data_points = @ses.statistics.result %>

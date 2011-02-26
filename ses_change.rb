@@ -36,3 +36,13 @@ end
 get '/complaints' do
   erb :complaints
 end
+
+post '/verified_email_addresses' do
+  begin
+    @ses.addresses.verify(params[:email_address])
+    @verification_message = "Amazon is sending an activation message to #{params[:email_address]}"
+  rescue Exception => e
+    @verification_message = e.to_s
+  end
+  erb :index
+end
