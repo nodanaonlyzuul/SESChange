@@ -1,7 +1,7 @@
 h1. SESChange is a Sinatra app to monitor your SES account activity.
 
   "Amazon Simple Email Service (SES)":http://aws.amazon.com/ses/ is a way for your application to send transactional email cheaply.
-  Amazon puts funky restrictions on your initial send rate and transaction limits.
+  Amazon puts "funky restrictions":http://aws.amazon.com/ses/faqs/#31 on your initial send rate and transaction limits.
 
 h3. If you want to know where you stand, without resorting to the command line - best get yourself a'SESChange.
 
