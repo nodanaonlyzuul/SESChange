@@ -23,32 +23,4 @@
     <input type="submit" value="Go"/>
   </p>
 </form>
-
-<h3>2 Week Overview</h3>
-<% data_points = @ses.statistics.result %>
-
-Delivery Attempts:
-  <a href="/delivery_attempts">
-    <%= data_points.map{|x|x["DeliveryAttempts"]}.map(&:to_i).inject{|sum, x| sum+x} %>
-  </a>
-  <br/>
-
-Bounces:
-  <a href="/bounces">
-    <%= data_points.map{|x|x["Bounces"]}.map(&:to_i).inject{|sum, x| sum+x} %>
-  </a>
-  <br/>
-
-Rejects:
-  <a href="/rejects">
-    <%= data_points.map{|x|x["Rejects"]}.map(&:to_i).inject{|sum, x| sum+x} %>
-  </a>
-  <br/>
-
-Complaints:
-  <a href="/complaints">
-    <%= data_points.map{|x|x["Complaints"]}.map(&:to_i).inject{|sum, x| sum+x} %>
-  </a>
- <br/>
-
 <!-- TODO See All Activity Over Time -->

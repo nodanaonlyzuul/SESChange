@@ -2,26 +2,76 @@
   <head>
     <title>SES Usage For <%= @app_name %></title>
     <style TYPE="text/css">
-
       body{
         font: 13.34px helvetica,arial,freesans,clean,sans-serif;
       }
 
-      #header{
-        height: 91px;
-        margin: 0 0 15px;
-        min-width: 950px;
-        width: 100%;
-        margin-bottom: 0;
-        background-color: #eee;
+      #content{
+        background: none repeat scroll 0 0 #FFFFFF;
+        padding: 10px 20px;
       }
 
+      #main_nav .main_section{
+        display: inline;
+        position: relative;
+      }
+
+      li{
+        list-style: none outside none;
+      }
+
+      #main_nav .main_section_link {
+          display: inline-block;
+          font-weight: bold;
+          margin: 0 2px 0 0;
+          padding: 5px 10px;
+          text-decoration: none;
+      }
+
+      #main_nav .sub_section a {
+          background-color: #DDDDDD;
+          color: #666666;
+          text-shadow: 0 1px 0 #FFFFFF;
+      }
+
+      #app_title{
+        font-size:   24px;
+        font-weight: bold;
+        margin-top:  28px;
+      }
+
+      #header{
+        height:        90px;
+        padding:       10px 10px 0;
+        min-width:     950px;
+        width:         100%;
+        margin-bottom: 0;
+        background:    none repeat scroll 0 0 #BBBBBB;
+      }
+
+      .nav {
+        margin:  0px;
+        padding: 0px;
+      }
+
+      .dashboard_link a {
+        color: #666;
+      }
+
+      #main_nav .active {
+        text-decoration: underline;
+        font-weight: bold;
+        color: #000;
+      }
     </style>
   </head>
   <body>
     <div id="header">
-      <h2>Amazon SES info for '<%= @app_name %>'</h2>
+      <div id="app_title">Amazon SES info for '<%= @app_name %>'</div>
     </div>
-    <%= yield %>
+    <%= erb(:nav) %>
+    <div id="content">
+      <%= yield %>
+    </div>
   </body>
 </HTML>

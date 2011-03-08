@@ -5,9 +5,6 @@ h1. SESChange is a Sinatra app to monitor your SES account activity.
 
 h3. If you want to know where you stand, without resorting to the command line - best get yourself a'SESChange.
 
-!http://farm6.static.flickr.com/5294/5507169228_3221c680e1_b.jpg!
-!http://farm6.static.flickr.com/5135/5507169052_3b4610808a_o.png!
-
 h3. Features
 
   * Heads up of your current sending limit and sending rate.
@@ -18,6 +15,11 @@ h3. Coming up (hopefully)
 
   * Nicer presentation
   * Ability to run as rack middleware with simple http auth
+
+h3. Screenshots
+
+!http://farm6.static.flickr.com/5294/5507169228_259acf0840_o.png!
+!http://farm6.static.flickr.com/5135/5507169052_c437952ea5_o.png!
 
 h2. How To Get _your_ SESChange
 

@@ -1,0 +1,36 @@
+<% data_points = @ses.statistics.result %>
+
+<ul id="main_nav" class="nav">
+
+  <li class="main_section dashboard_link">
+    <a class="main_section_link  <%=  request.path_info == "/" ? 'active' : ''%>" href="/">Dashboard</a>
+  </li>
+
+  <li class="main_section dashboard_link">
+    <a class="main_section_link <%=  request.path_info == "/delivery_attempts" ? 'active' : ''%>" href="/delivery_attempts">
+      Delivery Attempts (<%= data_points.map{|x|x["DeliveryAttempts"]}.map(&:to_i).inject{|sum, x| sum+x} %>)
+    </a>
+  </li>
+
+  <li class="main_section dashboard_link">
+    <a class="main_section_link <%=  request.path_info == "/bounces" ? 'active' : ''%>" href="/bounces">
+      Bounces (<%= data_points.map{|x|x["Bounces"]}.map(&:to_i).inject{|sum, x| sum+x} %>)
+    </a>
+  </li>
+
+  <li class="main_section dashboard_link">
+    <a class="main_section_link <%=  request.path_info == "/rejects" ? 'active' : ''%>" href="/rejects">
+      Rejects (<%= data_points.map{|x|x["Rejects"]}.map(&:to_i).inject{|sum, x| sum+x} %>)
+    </a>
+  </li>
+
+  <li class="main_section dashboard_link">
+    <a class="main_section_link <%=  request.path_info == "/complaints" ? 'active' : ''%>" href="/complaints">
+      Complaints (<%= data_points.map{|x|x["Complaints"]}.map(&:to_i).inject{|sum, x| sum+x} %>)
+    </a>
+  </li>
+
+  <li class="main_section">
+    <em>numbers reflect last 2 weeks of activity</em>
+  </li>
+</ul>
