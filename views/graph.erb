@@ -18,9 +18,6 @@
 <br/>
 <br/>
 <br/>
-<%
-  require "ruby-debug"
-  debugger
- %>
+
 <img src="http://chart.apis.google.com/chart?chxl=0:|<%= dates.join("|") %>|1:|<%= tracked_statistic.min %>|<%= tracked_statistic.max %>&chxr=0,1,3&chxt=x,y&chs=600x300&cht=lc&chd=t:<%= tracked_statistic.join(",") %>&chg=25,50&chls=0.75,-1,-1|2,4,1&chm=o,FF9900,1,-2,8|b,3399CC44,0,1,0&chtt=<%= label %>" width="600" height="300" alt="<%= label %>" />
 <br/>
