@@ -5,13 +5,16 @@
                           datetime = DateTime.parse(date_string)
                           "#{datetime.month}/#{datetime.day}"
                        end
-   x = []
+
+   non_unique_dates = []
    dates.each_with_index do |date, i|
-     x.include?(date) ? dates[i] = " " : x << date
+     non_unique_dates.include?(date) ? dates[i] = " " : non_unique_dates << date
    end
 
    tracked_statistic = data_points.map{|x|x[tracked_statistic_name]}.map(&:to_i)
 
+   y_axis_labels = [tracked_statistic.min]
+   5.times{|i| y_axis_labels[i+1] = y_axis_labels[i] + (tracked_statistic.max / 5)}
 %>
 
 <h2><%= label %>: <%= data_points.map{|x|x[tracked_statistic_name]}.map(&:to_i).inject{|sum, x| sum+x} %> over last 2 weeks</h2>
@@ -19,5 +22,5 @@
 <br/>
 <br/>
 
-<img src="http://chart.apis.google.com/chart?chxl=0:|<%= dates.join("|") %>|1:|<%= tracked_statistic.min %>|<%= tracked_statistic.max %>&chxr=0,1,3&chxt=x,y&chs=600x300&cht=lc&chd=t:<%= tracked_statistic.join(",") %>&chg=25,50&chls=0.75,-1,-1|2,4,1&chm=o,FF9900,1,-2,8|b,3399CC44,0,1,0&chtt=<%= label %>" width="600" height="300" alt="<%= label %>" />
+<img src="http://chart.apis.google.com/chart?chxl=0:|<%= dates.join("|") %>|1:|<%= y_axis_labels.join("|") %>&chxr=0,1,3&chxt=x,y&chs=600x300&cht=lc&chd=t:<%= tracked_statistic.join(",") %>&chg=25,50&chls=0.75,-1,-1|2,4,1&chm=o,FF9900,1,-2,8|b,3399CC44,0,1,0&chtt=<%= label %>" width="600" height="300" alt="<%= label %>" />
 <br/>
