@@ -1,19 +1,4 @@
-<%
-   data_points       = @ses.statistics.result.sort_by{|x| x["Timestamp"]}
-   dates             = data_points.map{|x|x["Timestamp"]}
-   dates             = dates.map do |date_string|
-                          datetime = DateTime.parse(date_string)
-                          "#{datetime.month}-#{datetime.day}"
-                       end.uniq
-   rejects = data_points.map{|x|x["Rejects"]}
-
+<%= erb :graph,
+        :locals => {:tracked_statistic_name => "Rejects",
+                    :label                  => "Rejects"}
 %>
-<h2>Rejects: <%= data_points.map{|x|x["Rejects"]}.map(&:to_i).inject{|sum, x| sum+x} %> over last 2 weeks</h2>
-<br/>
-<br/>
-<br/>
-
-<img src="http://chart.apis.google.com/chart?chxl=0:|<%= dates.join("|") %>|1:|<%= rejects.min %>|<%= rejects.max %>&chxr=0,1,3&chxt=x,y&chs=600x300&cht=lc&chd=t:<%= rejects.join(",") %>&chg=25,50&chls=0.75,-1,-1|2,4,1&chm=o,FF9900,1,-2,8|b,3399CC44,0,1,0&chtt=Rejects" width="600" height="300" alt="Rejects" />
-<br/>
-<br/>
-<a href="/">Back</a>
