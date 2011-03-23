@@ -1,4 +1,5 @@
 module SesChangeInitializer
+
   def self.settings
     settings ||= YAML.load_file(File.join('settings', 's3_credentials.yml'))
   end

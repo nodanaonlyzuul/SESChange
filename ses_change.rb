@@ -7,10 +7,11 @@
 #   http_simple auth
 
 require 'rubygems'
+require 'yaml'
 require 'sinatra'
 require 'aws/ses'
 require 'erb'
-require 'ses_change_initializer'
+require './ses_change_initializer'
 
 before do
   @app_name = "Stephen's Account"
