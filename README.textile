@@ -1,4 +1,9 @@
-h1. SESChange is a Sinatra app to monitor your SES account activity.
+h1. This Repository has little use.
+
+ Amazon's "console":http://aws.amazon.com/console/ now supports SES and has every feature this app does.
+ This app is only useful if you're looking to embed it as rack middleware in another app.
+
+h3. SESChange is a Sinatra app to monitor your SES account activity.
 
   "Amazon Simple Email Service (SES)":http://aws.amazon.com/ses/ is a way for your application to send transactional email cheaply.
   Amazon puts "funky restrictions":http://aws.amazon.com/ses/faqs/#31 on your initial send rate and transaction limits.
